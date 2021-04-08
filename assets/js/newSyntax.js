@@ -30,17 +30,37 @@ class Worker {
     get rate(){
         return this._rate;
     }
-    getSalary(){
+    set amountOfDays(newAmountOdDays){
+        this._amountOfDays = newAmountOfDays;
+    }
+    get amountOfDays(){
+        return this._amountOfDays;
+    }
+
+    get salary(){
         return this.rate * this.amountOfDays;
     }
 }
+
 const worker1 = new Worker('Test', 'Testovich', 100, 20);
 
 class Fuel {
+    /**
+     * 
+     * @param {*} volume 
+     * @param {*} density 
+     */
     constructor (volume, density){
         this.volume = volume;
         this.density = density;
     }
+    set volume(newVolume){
+        this._volume = newVolume;
+    }
+    get volume(){
+        return this._volume;
+    }
+
     getFuelWeight (){
         return this.volume * this.density;
     }
